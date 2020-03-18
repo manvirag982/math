@@ -65,6 +65,7 @@ using namespace std;
 #define fastio   ios_base::sync_with_stdio(false);cin.tie(NULL);
 const int MAX =1e5+10;
 // sweeping in bottom to up
+// basic of this question is intersection of horizontal and verticle lines by line sweep
 void pls()
 {
   ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
