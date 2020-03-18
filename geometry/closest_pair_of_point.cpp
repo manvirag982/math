@@ -15,6 +15,9 @@ using namespace std;
 #define i16 int16_t
 #define endl "\n"
 #define fastio   ios_base::sync_with_stdio(false);cin.tie(NULL);
+// solution by line sweep algorithm
+// sort all points by x
+// set sort by y
 const int MAX =5e4+10;
 void pls()
 {
@@ -24,27 +27,9 @@ void pls()
   freopen("output.txt", "w", stdout);
 #endif
 }
-// struct  pt
-// {
-//     double x,y;
-//       int ix;
-     
-//      bool operator<(const pt &a,const pt &b)
-//      {
-//           if(a.y!=b.y)
-//             return a.y<b.y;
-//         else
-//             a.x<b.x;
-//      }
-// // {
-// //     if(a.y==b.y)return a.x<b.x;
-// //     return a.y<b.y;
-// // }  
-// };
-
 #define pt pair<pi,int>
-#define y f.f
-#define x f.s
+#define y f.f       // NOTE
+#define x f.s     // NOTE
 #define ix s
 int n;
 vector< pt > pnts(MAX);
@@ -64,13 +49,13 @@ double closest_pair()
         for (int i=1;i<n;++i)
         {  
              // removing all point whose x distance is large than dis
-            while (left<i && pnts[i].x-pnts[left].x > best)
+            while (left<i && pnts[i].x-pnts[left].x > best)       
                 box.erase(pnts[left++]);
              
              // checking remaining points
             // fartest point x-dis,y-dis
            
-            for(auto it=box.lower_bound(mk(mk(pnts[i].y-best,pnts[i].x-best),pnts[0].s));it!=box.end() && pnts[i].y+best>=it->y;it++)
+            for(auto it=box.lower_bound(mk(mk(pnts[i].y-best,pnts[i].x-best),pnts[0].s));it!=box.end() && pnts[i].y+best>=it->y;it++)  // since set is according to y coordinate so if any element is greater than x+best the all remain element will also be greatest
                 {   
                     double ress=sqrt(pow(pnts[i].x - it->x, 2.0)+pow(pnts[i].y - it->y, 2.0));
                     
