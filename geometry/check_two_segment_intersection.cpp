@@ -61,11 +61,12 @@ bool doIntersect(Point p1, Point q1, Point p2, Point q2)
   
 int main()
 {
-    else
+   
     Point p1,q1,p2,q2;
     cin>>p1.x>>p1.y>>q1.x>>q1.y>>p2.x>>p2.y>>q2.x>>q2.y ;
     if(doIntersect(p1,q1,p2,q2))
     cout<<"YES";
+     else
     cout<<"NO";
              
       return 0;
