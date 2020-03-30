@@ -143,20 +143,20 @@ void primefact(int x)
        while(x%2==0)
        {
           // cout<<"2 ";
-          n=n/2;
+          x=x/2;
        }
 
        for(int i=3;i<=sqrt(x);i+=2)
        {
-            while(n%i==0)
+            while(x%i==0)
             {
                cout<<"i ";
-               n=n/i;
+               x=x/i;
             }
        }
 
-       if(n>2)
-        cout<<n<<" ";
+       if(x>2)
+        cout<<x<<" ";
 
 }
 // count coprime <n of n is totient function
