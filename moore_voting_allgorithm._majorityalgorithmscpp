@@ -1,4 +1,12 @@
 //Given an array of size n, find the majority element. The majority element is the element that appears more than floor(n/2) times.
+
+/*If there is a majority element, the algorithm will always find it. For, supposing that the majority element is m, let c be a number
+defined at any step of the algorithm to be either the counter, if the stored element is m, or the negation of the counter otherwise.
+Then at each step in which the algorithm encounters a value equal to m, the value of c will increase by one, and at each step at which
+it encounters a different value, the value of c may either increase or decrease by one. If m truly is the majority, there will be more
+increases than decreases, and c will be positive at the end of the algorithm. But this can be true only when the final stored element 
+is m, the majority element.*/
+
 class Solution {
     public:
         int majorityElement(vector<int> &num) {
